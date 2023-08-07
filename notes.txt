@@ -1,0 +1,3 @@
+qjsc: quickjs.c libregexp.c libunicode.c cutils.c quickjs-libc.c
+qjs: qjs.c repl.c (repl.js) libbf.c + <qjsc dependencies>
+

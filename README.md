@@ -2,6 +2,6 @@
 
 Trying out QuickJS.
 
-Source files are from;
+Source files are from:
 https://bellard.org/quickjs/
 

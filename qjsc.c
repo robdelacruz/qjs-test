@@ -513,6 +513,9 @@ int main(int argc, char **argv)
     namelist_add(&cmodule_list, "std", "std", 0);
     namelist_add(&cmodule_list, "os", "os", 0);
 
+    //$$ new module added
+    namelist_add(&cmodule_list, "testlib", "testlib", 0);
+
     for(;;) {
         c = getopt(argc, argv, "ho:cN:f:mxevM:p:S:D:");
         if (c == -1)

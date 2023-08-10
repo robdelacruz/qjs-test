@@ -72,6 +72,7 @@ all: $(OBJDIR) $(PROGS)
 # cutils.c
 # quickjs-libc.c
 QJS_LIB_OBJS=$(OBJDIR)/quickjs.o $(OBJDIR)/libregexp.o $(OBJDIR)/libunicode.o $(OBJDIR)/cutils.o $(OBJDIR)/quickjs-libc.o
+QJS_LIB_OBJS+= $(OBJDIR)/quickjs-testlib.o
 
 ifdef CONFIG_BIGNUM
 QJS_LIB_OBJS+=$(OBJDIR)/libbf.o 

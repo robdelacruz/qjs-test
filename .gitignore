@@ -1,0 +1,8 @@
+*.swp
+*.a
+qjsc
+run-test262
+t
+.obj/
+.gitignore
+

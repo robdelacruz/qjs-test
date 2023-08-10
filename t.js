@@ -5,5 +5,10 @@ import * as testlib from "testlib"
 
 var obj = {};
 obj.name = "rob";
+obj.details = {
+    "detail1": "ABCabcdefgh",
+    "detail2": 456,
+};
+obj.list1 = [1, 2, 3, 4, 5, "abc"];
 testlib.printobj(obj);
 

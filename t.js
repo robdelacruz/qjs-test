@@ -1,14 +1,10 @@
-import * as testlib from "testlib"
+import * as os from "os";
+import * as std from "std";
+import * as testlib from "testlib";
 
-//var n = testlib.sum_all(1, 2, 3, 4, 5);
-//console.log(n);
+//print(Object.getPrototypeOf(testlib));
 
-var obj = {};
-obj.name = "rob";
-obj.details = {
-    "detail1": "ABCabcdefgh",
-    "detail2": 456,
-};
-obj.list1 = [1, 2, 3, 4, 5, "abc"];
-testlib.printobj(obj);
+var w = testlib.new_win();
+w.set_title("New Window Title");
+w.set_size(640, 480);
 

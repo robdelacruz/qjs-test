@@ -8,3 +8,7 @@ var w = testlib.new_win();
 w.set_title("New Window Title");
 w.set_size(640, 480);
 
+print(`w.title: '${w.title}'`);
+print(`w.width: ${w.width}`);
+print(`w.height: ${w.height}`);
+

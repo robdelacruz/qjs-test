@@ -116,19 +116,19 @@ static void js_testlib_win_finalizer(JSRuntime *rt, JSValue val) {
 static JSValue js_testlib_win_set_title(JSContext *ctx, JSValueConst this_val,
                                         int argc, JSValueConst *argv) {
     const char *str;
-    size_t str_len;
     JSTESTLIBWin *w = JS_GetOpaque2(ctx, this_val, js_testlib_win_class_id);
     if (!w)
         return JS_EXCEPTION;
     if (argc == 0)
         return JS_EXCEPTION;
-    str = JS_ToCStringLen(ctx, &str_len, argv[0]);
+    str = JS_ToCString(ctx, argv[0]);
     if (!str)
         return JS_EXCEPTION;
 
     if (w->title)
         free(w->title);
     w->title = strdup(str);
+    JS_SetPropertyStr(ctx, this_val, "title", JS_NewString(ctx, str));
 
     printf("js_testlib_win_set_title title: '%s'\n", str);
     JS_FreeCString(ctx, str);
@@ -151,6 +151,8 @@ static JSValue js_testlib_win_set_size(JSContext *ctx, JSValueConst this_val,
     printf("js_testlib_win_set_size width/height: %d,%d\n", width, height);
     w->width = width;
     w->height = height;
+    JS_SetPropertyStr(ctx, this_val, "width", JS_NewInt32(ctx, width));
+    JS_SetPropertyStr(ctx, this_val, "height", JS_NewInt32(ctx, height));
     return JS_UNDEFINED;
 }
 
